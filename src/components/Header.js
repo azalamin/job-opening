@@ -1,27 +1,19 @@
 import React, { useEffect, useState } from "react";
-import Loading from "./Loading";
 
 const Header = () => {
   const [user, setUser] = useState({});
-  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    setIsLoading(true);
     fetch("http://refertest.pythonanywhere.com/user/data")
       .then((res) => res.json())
       .then((data) => {
         setUser(data?.data);
-        setIsLoading(false);
       });
   }, []);
 
-  if (isLoading) {
-    return <Loading />;
-  }
-
   return (
     <header className="bg-primary">
-      <div className="navbar  px-6 md:px-12">
+      <div className="navbar px-6 md:px-12">
         <div className="flex-1">
           <span className="btn btn-ghost text-white normal-case text-xl">
             daisyUI
@@ -29,11 +21,21 @@ const Header = () => {
         </div>
         <div className="flex-none gap-2">
           <div>
-            <h3 className="text-2xl text-white">{user?.name}</h3>
+            <h3
+              data-aos="fade-left"
+              data-aos-duration="2000"
+              className="text-2xl text-white"
+            >
+              {user?.name}
+            </h3>
           </div>
           <div className="dropdown dropdown-end">
             <label tabIndex="0" className="btn btn-ghost btn-circle avatar">
-              <div className="w-10 rounded-full">
+              <div
+                data-aos="fade-left"
+                data-aos-duration="3000"
+                className="w-10 rounded-full border-2 border-white"
+              >
                 <img src={user?.pictureUrl} alt="" />
               </div>
             </label>
