@@ -16,7 +16,7 @@ const Header = () => {
       <div className="navbar px-6 md:px-12">
         <div className="flex-1">
           <span className="btn btn-ghost text-white normal-case text-xl">
-            daisyUI
+            DEVELOPER LTD
           </span>
         </div>
         <div className="flex-none gap-2">

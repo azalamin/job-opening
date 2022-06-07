@@ -22,9 +22,12 @@ const Jobs = () => {
   return (
     <div className="px-6 md:px-12 mt-20 pb-20">
       <h3 className="text-center text-4xl font-bold">Grab Your JOB</h3>
+      <p className="text-center text-lg">Opening for everyone</p>
       {jobs.map(
         ({ id, designation, skills, company, location, min_experience }) => (
           <div
+            data-aos="zoom-out-down"
+            data-aos-duration="400"
             key={id}
             style={{ boxShadow: "0px 10px 40px 5px black" }}
             className="card bg-gray-900 text-white mt-20"
