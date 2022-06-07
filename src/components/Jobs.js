@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Loading from "./Loading";
 
 const Jobs = () => {
   const [jobs, setJobs] = useState([]);
@@ -15,9 +14,6 @@ const Jobs = () => {
       });
   }, []);
 
-  if (isLoading) {
-    return <Loading />;
-  }
 
   return (
     <div className="px-6 md:px-12 mt-20 pb-20">
@@ -35,7 +31,7 @@ const Jobs = () => {
                 <p>Company: {company}</p>
                 <p>Location: {location}</p>
               </div>
-              <div className="">
+              <div className="md:w-[40%]">
                 <h2 className="">Required Skills</h2>
                 <p>
                   {skills.map((skill, index) => (
@@ -43,7 +39,7 @@ const Jobs = () => {
                   ))}
                 </p>
                 <small>
-                  Minimum Experience:{" "}
+                  Minimum Experience:
                   {min_experience === 0
                     ? "Fresher Opening"
                     : min_experience + " year"}
