@@ -4,7 +4,7 @@ const Header = () => {
   const [user, setUser] = useState({});
 
   useEffect(() => {
-    fetch("http://refertest.pythonanywhere.com/user/data")
+    fetch("https://refertest.pythonanywhere.com/user/data")
       .then((res) => res.json())
       .then((data) => {
         setUser(data?.data);

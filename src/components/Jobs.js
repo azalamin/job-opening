@@ -7,7 +7,7 @@ const Jobs = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch("http://refertest.pythonanywhere.com/job/openings")
+    fetch("https://refertest.pythonanywhere.com/job/openings")
       .then((res) => res.json())
       .then((data) => {
         setJobs(data?.data);
@@ -45,11 +45,11 @@ const Jobs = () => {
                     <span key={index}>{skill}, </span>
                   ))}
                 </p>
-                <small>
+                <small> 
                   Minimum Experience:
                   {min_experience === 0
-                    ? "Fresher Opening"
-                    : min_experience + " year"}
+                    ? " Fresher Opening"
+                    : " " + min_experience + " year"}
                 </small>
               </div>
               <div className="flex justify-end">
