@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Loading from "./Loading";
 
 const Jobs = () => {
   const [jobs, setJobs] = useState([]);
@@ -14,6 +15,9 @@ const Jobs = () => {
       });
   }, []);
 
+  if (isLoading) {
+    return <Loading />;
+  }
 
   return (
     <div className="px-6 md:px-12 mt-20 pb-20">
